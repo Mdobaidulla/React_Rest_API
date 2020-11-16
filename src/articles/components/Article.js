@@ -3,9 +3,9 @@ class Article extends Component{
   render(){
     return(
       <div className="article">
-         <h4>Title</h4>
-         <sub>Author</sub>
-         <p>Content</p>
+         <h4>{this.props.title}</h4>
+         <sub>{this.props.author}</sub>
+         <p>{this.props.content}</p>
       </div>
     )
   }
