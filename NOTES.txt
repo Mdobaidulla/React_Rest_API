@@ -1,0 +1,15 @@
+API
+  ==> /api/articles
+
+
+  Components
+    App   state=[Article]
+       Articles (List Container)
+            Article (List Item)
+               Delete
+        Search
+ 
+ Props
+
+ Stage
+    Articles 
