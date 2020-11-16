@@ -4,7 +4,8 @@ API
 
   Components
     App   state=[Article]
-       Articles (List Container)
+       Articles (List Container) => Make API CALL TO /api/articles 
+                                => setStae on the APP 
             Article (List Item)
                Delete
         Search
