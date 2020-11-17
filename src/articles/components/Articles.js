@@ -34,7 +34,6 @@ class Articles extends Component{
       <>
           <h3>All Articles</h3>
           {allArticles}
-        
       </>
     )
   }

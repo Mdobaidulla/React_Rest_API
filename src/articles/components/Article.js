@@ -9,7 +9,6 @@ class Article extends Component{
          <p>{this.props.id}</p>
          <a href="#" onClick={this.deleteArticle} >Delete</a>
       </div>
-      
     )
   }
   deleteArticle = (e) =>{
