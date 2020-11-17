@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import Article from './Article';
-import {getAllArticles} from '../api';
+import {getAllArticles, deleteArticleByID} from '../api';
 class Articles extends Component{
+  
     componentDidMount(){
         getAllArticles()
         .then((response) =>{
-         console.log(response);
          this.props.setArticles(response.data.articles);
         })
         .catch((error) =>{
             console.log(`API ERROR:`, error);
         })
+
+
     };   
   render(){
     let allArticles = <h4>No Articles!!</h4>;
@@ -20,6 +22,9 @@ class Articles extends Component{
                         author = {article.author}
                         content = {article.content}
                         key ={index}
+                        deleteArticle={this.deleteArticle}
+                        id={article._id}
+                        
           />
         
     })
@@ -33,5 +38,21 @@ class Articles extends Component{
       </>
     )
   }
+  
+  deleteArticle = (id =>{
+    deleteArticleByID(id)
+    .then((response) =>{
+      console.log(`This Id's value is DELETED ${id}`,response);
+      const newArticalesList =  this.props.articles.filter((article) =>{
+        return article._id !== id;
+      })
+  this.props.setArticles(newArticalesList);    
+
+
+    }).catch((error)=>{
+      console.log("error", error);
+    })
+  })
+
 }
 export default Articles;
